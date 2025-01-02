@@ -1,18 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost", "blog-backend-production.up.railway.app"],
+    domains: ["localhost", "portfolio-caoanhvu.onrender.com"],
+    minimumCacheTTL: 60,
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://blog-backend-production.up.railway.app/api/:path*", // Trỏ đến backend server
-      },
-    ];
-  },
+  compress: true,
+  swcMinify: true,
+  reactStrictMode: true,
+
   async redirects() {
-    // Thêm phần này
     return [
       {
         source: "/blog/:id",
@@ -20,9 +16,6 @@ const nextConfig = {
         permanent: true,
       },
     ];
-  },
-  images: {
-    domains: ["localhost"],
   },
 };
 
