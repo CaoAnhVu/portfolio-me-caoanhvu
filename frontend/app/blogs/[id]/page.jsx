@@ -77,7 +77,7 @@ export default function BlogDetail() {
 
         {/* Hero Section with Image */}
         <div className="relative h-[60vh] w-full  mt-20">
-          {blog.image && <Image src={`http://localhost:5000${blog.image}`} alt={blog.title} fill className="object-cover" priority />}
+          {blog.image && <Image src={`${process.env.NEXT_PUBLIC_API_URL}${blog.image}`} alt={blog.title} fill className="object-cover" priority />}
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1F] to-transparent" />
 
           {/* Title Overlay */}

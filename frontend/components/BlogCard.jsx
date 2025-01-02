@@ -6,7 +6,7 @@ const BlogCard = ({ blog }) => {
   return (
     <div className="bg-[#27272c] rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300">
       <div className="relative h-48 w-full">
-        {blog.image ? <Image src={`http://localhost:5000${blog.image}`} alt={blog.title} fill className="object-cover" /> : <div className="w-full h-full bg-gray-700" />}
+        {blog.image ? <Image src={`${process.env.NEXT_PUBLIC_API_URL}${blog.image}`} alt={blog.title} fill className="object-cover" /> : <div className="w-full h-full bg-gray-700" />}
       </div>
       <div className="p-6">
         <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">

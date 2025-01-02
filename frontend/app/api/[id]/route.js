@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 export async function GET(req, { params }) {
   try {
     const { id } = params;
-    const res = await fetch(`http://localhost:5000/api/blogs/${id}`);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const res = await fetch(`${apiUrl}/api/blogs/${id}`);
 
     if (!res.ok) {
       throw new Error("Blog not found");
