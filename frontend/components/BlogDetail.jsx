@@ -36,7 +36,7 @@ export default function BlogDetail() {
   return (
     <motion.article initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="container mx-auto py-8 px-4">
       <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
-        {blog.image && <Image src={`http://localhost:5000${blog.image}`} alt={blog.title} fill className="object-cover" priority />}
+        {blog.image && <Image src={`${process.env.NEXT_PUBLIC_API_URL}${blog.image}`} alt={blog.title} fill className="object-cover" priority />}
       </div>
 
       <div className="max-w-4xl mx-auto">
