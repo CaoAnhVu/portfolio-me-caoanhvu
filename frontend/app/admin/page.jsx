@@ -12,7 +12,7 @@ const Page = () => {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("/api/blogs");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
       console.log("Response status:", res.status); // Debug
 
       const data = await res.json();
@@ -38,7 +38,7 @@ const Page = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
-        const res = await fetch(`/api/blogs/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${id}`, {
           method: "DELETE",
         });
         if (res.ok) {

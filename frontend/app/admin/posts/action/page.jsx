@@ -30,7 +30,7 @@ const PostForm = ({ params }) => {
 
   const fetchPost = async () => {
     try {
-      const res = await fetch(`/api/blogs/${params.id}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${params.id}`);
       const data = await res.json();
       setFormData(data);
     } catch (error) {
@@ -41,7 +41,7 @@ const PostForm = ({ params }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`/api/blogs${isEdit ? `/${params.id}` : ""}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs${isEdit ? `/${params.id}` : ""}`, {
         method: isEdit ? "PUT" : "POST",
         headers: {
           "Content-Type": "application/json",

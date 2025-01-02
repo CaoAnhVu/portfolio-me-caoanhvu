@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["localhost", "blog-backend-production.up.railway.app"],
+  },
   async rewrites() {
     return [
       {
         source: "/api/:path*",
-        destination: "http://localhost:5000/api/:path*", // Trỏ đến backend server
+        destination: "https://blog-backend-production.up.railway.app/api/:path*", // Trỏ đến backend server
       },
     ];
   },

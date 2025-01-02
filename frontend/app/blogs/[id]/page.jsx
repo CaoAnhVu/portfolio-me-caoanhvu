@@ -18,7 +18,7 @@ export default function BlogDetail() {
     setLoading(true);
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`/api/blogs/${id}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${id}`);
         if (!res.ok) throw new Error("Failed to fetch blog");
         const data = await res.json();
         setBlog(data.blog);
