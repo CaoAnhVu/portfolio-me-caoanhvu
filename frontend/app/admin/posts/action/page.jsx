@@ -30,6 +30,8 @@ const PostForm = ({ params }) => {
 
   const fetchPost = async () => {
     try {
+      console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${params.id}`);
       const data = await res.json();
       setFormData(data);
@@ -41,6 +43,7 @@ const PostForm = ({ params }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs${isEdit ? `/${params.id}` : ""}`, {
         method: isEdit ? "PUT" : "POST",
         headers: {

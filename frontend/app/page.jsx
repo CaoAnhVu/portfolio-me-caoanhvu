@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
@@ -7,6 +8,15 @@ import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 const Home = () => {
+  const handleDownload = () => {
+    const fileUrl = "/ResumeCaoAnhVuFullStackDeveloperIntern.pdf";
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "CaoAnhVu-CV";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -33,7 +43,7 @@ const Home = () => {
             <div>
               {/* btn and social media */}
               <div className="flex flex-col xl:flex-row items-center gap-8">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+                <Button onClick={handleDownload} variant="outline" size="lg" className="uppercase flex items-center gap-2">
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />
                 </Button>

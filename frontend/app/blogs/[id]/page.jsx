@@ -18,6 +18,8 @@ export default function BlogDetail() {
     setLoading(true);
     const fetchBlog = async () => {
       try {
+        console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${id}`);
         if (!res.ok) throw new Error("Failed to fetch blog");
         const data = await res.json();
@@ -53,7 +55,7 @@ export default function BlogDetail() {
       </motion.div>
     );
   }
-
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
   if (!blog) {
     return (
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center justify-center min-h-screen">
@@ -76,10 +78,10 @@ export default function BlogDetail() {
         </div>
 
         {/* Hero Section with Image */}
+
         <div className="relative h-[60vh] w-full  mt-20">
           {blog.image && <Image src={`${process.env.NEXT_PUBLIC_API_URL}${blog.image}`} alt={blog.title} fill className="object-cover" priority />}
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1F] to-transparent" />
-
           {/* Title Overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
             <div className="container mx-auto max-w-4xl">

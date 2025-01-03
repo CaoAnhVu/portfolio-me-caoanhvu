@@ -14,6 +14,8 @@ export default function BlogDetail() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
+        console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${id}`);
         if (!res.ok) throw new Error("Failed to fetch blog");
         const data = await res.json();

@@ -55,6 +55,7 @@ const CreatePost = () => {
       if (formData.image) {
         formDataToSend.append("image", formData.image);
       }
+      console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
 
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`, {
         method: "POST",

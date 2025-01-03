@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     domains: ["localhost", "portfolio-caoanhvu.onrender.com"],
     minimumCacheTTL: 60,
+    // unoptimized: true
   },
   compress: true,
   swcMinify: true,

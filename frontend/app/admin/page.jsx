@@ -12,6 +12,8 @@ const Page = () => {
 
   const fetchPosts = async () => {
     try {
+      console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
       console.log("Response status:", res.status); // Debug
 
@@ -38,6 +40,7 @@ const Page = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
+        console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${id}`, {
           method: "DELETE",
         });

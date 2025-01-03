@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaCalendar, FaFolder } from "react-icons/fa";
 
 const BlogCard = ({ blog }) => {
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
   return (
     <div className="bg-[#27272c] rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300">
       <div className="relative h-48 w-full">
