@@ -370,8 +370,8 @@ const Resume = () => {
                       lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
-                          {item.image ? <Image src={item.image} alt="" width={60} height={60} className=" object-cover " /> : null}
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left mb-6">{item.degree}</h3>
+                          {item.image ? <Image src={item.image} alt="" width={70} height={70} className=" object-cover  " /> : null}
 
                           <div className="flex items-center gap-3">
                             {/* dot */}
