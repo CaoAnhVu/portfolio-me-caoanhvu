@@ -1,18 +1,18 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
+'use client';
+import { Button } from '@/components/ui/button';
+import { FiDownload } from 'react-icons/fi';
 
 // components
-import Socials from "@/components/Socials";
-import Photo from "@/components/Photo";
-import Stats from "@/components/Stats";
+import Socials from '@/components/Socials';
+import Photo from '@/components/Photo';
+import Stats from '@/components/Stats';
 
 const Home = () => {
   const handleDownload = () => {
-    const fileUrl = "/ResumeCaoAnhVuFullStackDeveloperIntern.pdf";
-    const link = document.createElement("a");
+    const fileUrl = '/Resume Cao Anh Vu Frontend Developer ReactJs.pdf';
+    const link = document.createElement('a');
     link.href = fileUrl;
-    link.download = "CaoAnhVu-CV";
+    link.download = 'Resume-Cao Anh Vu Frontend Developer ReactJs';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -35,8 +35,8 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
-              {" "}
-              Hello! I'm <br /> <span className="text-accent">Cao Anh Vu (AndyVuCoder)</span>{" "}
+              {' '}
+              Hello! I'm <br /> <span className="text-accent">Cao Anh Vu (AndyVuCoder)</span>{' '}
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.</p>
             <p className="max-w-[500px] mb-9 text-white/80">After a day, what new thing do we learn? Or duplicate of yesterday? Let tomorrow's self be better than yesterday's self.</p>
